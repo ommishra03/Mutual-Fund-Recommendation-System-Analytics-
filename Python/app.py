@@ -31,7 +31,7 @@ st.markdown(
 # =========================================================
 @st.cache_data
 def load_data():
-    return pd.read_excel("Excel/top_30_mutual_funds_excel.xlsx")
+    return pd.read_excel("../Excel/mutual_funds_.xlsx")
 
 df = load_data()
 
@@ -68,14 +68,28 @@ years = st.sidebar.slider(
 
 run = st.sidebar.button("Generate Recommendations")
 
+# =========================
+# NUMERIC SANITIZATION (CRITICAL)
+# =========================
+numeric_cols = ["returns_5yr", "sharpe", "standard_deviation"]
+
+df[numeric_cols] = (
+    df[numeric_cols]
+    .replace(["-", "—", ""], np.nan)
+    .apply(pd.to_numeric, errors="coerce")
+    .astype(float)
+)
+
+df[numeric_cols] = df[numeric_cols].fillna(df[numeric_cols].median())
+
 # =========================================================
 # Feature Engineering
 # =========================================================
 df = df.copy()
 
-df["z_returns_5yr"] = zscore(df["returns_5yr"])
-df["z_sharpe"] = zscore(df["sharpe"])
-df["z_std_dev"] = -zscore(df["standard_deviation"])  # lower volatility is better
+df["z_returns_5yr"] = zscore(df["returns_5yr"].to_numpy())
+df["z_sharpe"] = zscore(df["sharpe"].to_numpy())
+df["z_std_dev"] = -zscore(df["standard_deviation"].to_numpy())  # lower volatility is better
 
 df["raw_score"] = (
     0.5 * df["z_returns_5yr"] +
@@ -232,6 +246,8 @@ if run:
         )
 
         st.plotly_chart(fig2, use_container_width=True)
+    
+
 
     # =========================================================
     # Final Table
