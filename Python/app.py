@@ -31,7 +31,7 @@ st.markdown(
 # =========================================================
 @st.cache_data
 def load_data():
-    return pd.read_excel("../Excel/mutual_funds_.xlsx")
+    return pd.read_excel("../Excel/mutual_funds.xlsx")
 
 df = load_data()
 
