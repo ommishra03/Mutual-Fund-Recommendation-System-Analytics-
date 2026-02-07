@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
+from pathlib import Path
 from scipy.stats import zscore
 import plotly.express as px
 
@@ -29,9 +30,12 @@ st.markdown(
 # =========================================================
 # Load Data
 # =========================================================
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_PATH = BASE_DIR / "Excel" / "mutual_funds.xlsx"
+
 @st.cache_data
 def load_data():
-    return pd.read_excel("../Excel/mutual_funds.xlsx")
+    return pd.read_excel(DATA_PATH)
 
 df = load_data()
 
