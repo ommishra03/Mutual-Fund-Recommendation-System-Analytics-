@@ -1,160 +1,243 @@
-# Mutual Fund Recommendation System & Analytics 📊
+# 📊 Mutual Fund Recommendation System & Analytics
 
-> An end-to-end, data-driven mutual fund recommendation system built using statistical analysis and machine learning models, supported by business dashboards.
+> An end-to-end **Mutual Fund Analytics, Machine Learning & Business Intelligence** project that simulates how real fintech and asset-management analytics pipelines are built — from raw data to ML-based fund recommendations and executive dashboards.
 
-This repository demonstrates how **investment recommendation systems** are developed in real-world fintech and asset management environments — starting from baseline analytics to advanced ML-based scoring.
-
-The project combines **Python (analytics + ML)**, **Excel (data validation)**, and **Power BI (business storytelling)** to deliver investor-ready insights.
+🌐 **Live Application:**  
+👉 https://mutual-fund-analysis-om.streamlit.app/
 
 ---
 
-## Project Objective
+# 🚀 Project Overview
 
-The primary goal of this project is to **recommend suitable mutual funds** based on:
+This repository demonstrates how investment recommendation systems evolve from **basic analytics → statistical modeling → machine learning ranking**.
+
+The project integrates:
+
+- 🐍 Python (Data Analytics + ML)
+- 📑 Excel (Data Cleaning & Validation Layer)
+- 📊 Power BI (Business Dashboards)
+- 🌐 Streamlit (Interactive Web App)
+
+The goal is to recommend mutual funds using **risk-adjusted performance metrics** and intelligent scoring models — similar to workflows used in fintech analytics teams.
+
+---
+
+# 🎯 Project Objective
+
+Build a data-driven system to evaluate and recommend mutual funds based on:
+
 - Risk profile
 - Return expectations
 - Historical performance
-- Risk-adjusted metrics
-
-The system evolves progressively:
-1. Baseline analytical recommendations  
-2. Statistical normalization (Z-score)  
-3. Machine Learning–based ranking (XGBoost)
+- Volatility & risk-adjusted metrics
+- Composite statistical scoring
+- Machine learning ranking
 
 ---
 
-## 🧠 Recommendation System Approaches
+# 🧠 Recommendation System Approaches
 
-### 1️⃣ Baseline Recommendation (Rule-Based)
-- Simple filtering using returns and volatility
-- Acts as a benchmark system
-- Easy to interpret and explain
+## 1️⃣ Baseline Recommendation (Rule-Based)
+- Uses filtering logic based on returns and volatility
+- Acts as a benchmark model
+- Highly interpretable
 
-📄 Notebook:  
-`mutual_fund_baseline.ipynb`
+📄 `Python/mutual_fund_baseline.ipynb`
 
 ---
 
-### 2️⃣ Z-Score Based Scoring Model
-- Standardizes multiple financial metrics
+## 2️⃣ Z-Score Statistical Model
+- Standardizes financial metrics
 - Enables fair comparison across funds
-- Generates composite fund scores
+- Produces composite scores
 
-📄 Notebook:  
-`mutual_fund_zscore.ipynb`
-
----
-
-### 3️⃣ Machine Learning–Based Recommendation (XGBoost)
-- Uses gradient boosting for fund ranking
-- Learns complex relationships between risk and returns
-- Mimics production-style fintech recommendation engines
-
-📄 Notebook:  
-`mutual_fund-XGboost.ipynb`
+📄 `Python/mutual_fund_zscore.ipynb`
 
 ---
 
-## 📁 Repository Structure
+## 3️⃣ Machine Learning Ranking (XGBoost)
+- Gradient boosting model for ranking funds
+- Captures nonlinear relationships between features
+- Mimics production fintech recommendation engines
+
+📄 `Python/mutual_fund-XGboost.ipynb`  
+📦 Model File: `Python/xgboost_fund_ranker.pkl`
+
+---
+
+# 🌐 Live Streamlit Application
+
+The deployed app demonstrates the full recommendation workflow in an interactive format.
+
+🔗 https://mutual-fund-analysis-om.streamlit.app/
+
+### Features
+- Interactive fund analysis
+- Risk vs Return visualization
+- ML-based scoring demonstration
+- Business-friendly analytics interface
+
+---
+
+# 📁 Repository Structure
 
 ```
-Mutual-Fund-Analysis/
+MUTUAL_FUND_ANALYSIS/
 │
 ├── Excel/
-│ ├── raw_data.xlsx
-│ ├── cleaned_data.xlsx
-│ └── exploratory_analysis.xlsx
-│
-├── Python/
-│ ├── Mutual Fund Analysis.ipynb # Exploratory & feature analysis
-│ ├── mutual_fund_baseline.ipynb # Rule-based recommendation
-│ ├── mutual_fund_zscore.ipynb # Statistical scoring model
-│ └── mutual_fund-XGboost.ipynb # ML-based recommendation system
+│ ├── mutual_funds_original.xlsx
+│ ├── mutual_funds.xlsx
+│ └── mutual_funds_cleaned.xlsx
 │
 ├── PowerBI/
 │ └── mutual_fund_dashboard.pbix
 │
+├── Python/
+│ ├── app.py
+│ ├── Mutual Fund Analysis.ipynb
+│ ├── mutual_fund_baseline.ipynb
+│ ├── mutual_fund_final.ipynb
+│ ├── mutual_fund_zscore.ipynb
+│ ├── mutual_fund-XGboost.ipynb
+│ └── xgboost_fund_ranker.pkl
+│
+├── Category & AMC Benchmarking.png
+├── Fund Performance Overview.png
+├── Risk vs Return.png
+├── requirements.txt
+├── License
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-## 🛠 Tools & Technologies
+# 🛠 Tools & Technologies
 
-### Analytics & Machine Learning
-- Python (Pandas, NumPy, Scikit-learn, XGBoost)
-- Statistical normalization (Z-score)
-- Feature engineering & model evaluation
+## Analytics & Machine Learning
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- XGBoost
+- Statistical Normalization (Z-Score)
 
-### Business Analysis
-- Microsoft Excel (data validation, pivots)
+## Business Intelligence
+- Power BI
+- KPI Design
+- Investment Analytics Visualization
 
-### Visualization & Reporting
-- Power BI (interactive dashboards, KPIs)
+## Data Layer
+- Microsoft Excel
+- Data Validation & Cleaning
 
-### Version Control
-- Git & GitHub
+## Deployment
+- Streamlit
+- GitHub Version Control
 
 ---
 
-## 📊 Key Metrics Used
+# 📊 Key Metrics Used
 
-- Absolute returns
+- Absolute Returns
 - CAGR
-- Volatility & standard deviation
-- Risk-adjusted scoring
-- Composite fund ranking
+- Volatility / Standard Deviation
+- Risk-Adjusted Scores
+- Composite Z-Score Ranking
+- Machine Learning Fund Score
 
 ---
 
-## 📈 Dashboards & Business Insights
+# 📈 Dashboards & Business Insights
 
-Power BI dashboards are designed to:
-- Compare fund performance across categories
-- Highlight top-performing and high-risk funds
-- Support investor and stakeholder decision-making
-- Translate model outputs into business-friendly insights
+The Power BI dashboard converts model outputs into business insights:
+
+- Category-wise fund comparison
+- Risk vs Return positioning
+- AMC benchmarking
+- Performance trend analysis
+- Executive-level KPI storytelling
+
+📊 `PowerBI/mutual_fund_dashboard.pbix`
 
 ---
 
-## 🎯 Business Value
+# 🔄 End-to-End Analytics Pipeline
 
-This project simulates real analytics and ML work performed in:
+```
+Excel (Data Layer)
+↓
+Python Analytics & Feature Engineering
+↓
+Z-Score Statistical Model
+↓
+XGBoost Machine Learning Ranking
+↓
+Streamlit Web App + Power BI Dashboard
+```
+
+---
+
+# 💼 Business Value
+
+This project reflects real analytics work done in:
+
 - Fintech investment platforms
 - Asset management firms
-- Wealth advisory solutions
-- Data-driven investment research teams
+- Wealth advisory analytics teams
+- Data-driven investment research
 
-It demonstrates the ability to:
-- Build explainable recommendation systems
-- Combine statistics with machine learning
-- Align technical models with business goals
+It demonstrates:
 
----
-
-## 👤 Author
-
-**Om Mishra**  
-Data Analytics | Machine Learning   
-
-🔗 LinkedIn: https://www.linkedin.com/in/om-mishra-a62991289  
+✅ Explainable recommendation systems  
+✅ ML integration into business analytics  
+✅ Risk-return financial modeling  
+✅ Storytelling through dashboards  
 
 ---
 
-## 📜 License
+# ▶️ How to Run Locally
 
-This project is licensed under the **MIT License**.
+## 1. Clone Repository
+```bash
+git clone <https://github.com/ommishra03/Mutual-Fund-Recommendation-System-Analytics->
+cd MUTUAL_FUND_ANALYSIS
+```
+## 2️. Install Requirements
+``` bash
+pip install -r requirements.txt
+```
+## 3️. Run Streamlit App
+```bash
+streamlit run Python/app.py
+```
+---
+
+# 👤 Author
+
+Om Mishra
+
+Data Analytics | Machine Learning | Fintech Analytics
+
+🔗 LinkedIn: https://www.linkedin.com/in/om-mishra-a62991289
 
 ---
 
-## ⭐ Final Note
+# 📜 License
 
-This repository is structured as a **portfolio-grade, production-style project**.
-It highlights:
-- Progressive model development
-- Strong analytical reasoning
-- Practical ML application in finance
-- Clear communication of insights
+This project is licensed under the MIT License.
+---
 
-Ideal for roles in **Data Analytics, Business Analytics, and Fintech ML**.
+# ⭐ Final Note
+
+This is a portfolio-grade analytics + ML project designed to mirror how senior BI analysts and fintech data teams structure recommendation engines — combining:
+
+```
+> Statistical modeling
+> Machine learning ranking
+> Financial analytics
+> Business storytelling
+```
+
+Ideal for roles in:
+
+Data Analytics • Business Analytics • Fintech ML • BI Engineering
