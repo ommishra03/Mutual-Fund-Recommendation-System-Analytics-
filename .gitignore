@@ -1,6 +1,45 @@
+# ===============================
+# Python Cache & Compiled Files
+# ===============================
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# ===============================
+# Environment Files
+# ===============================
 .env
-.DS_Store
+.venv/
+venv/
+
+# ===============================
+# Jupyter Notebook
+# ===============================
 .ipynb_checkpoints/
+
+# ===============================
+# OS & System Files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# YData Profiling (Large HTML Reports)
+# ===============================
 Ydata_Profiling/*.html
+
+# ===============================
+# Streamlit Cache
+# ===============================
+.streamlit/
+
+# ===============================
+# VS Code Settings (Optional)
+# ===============================
+.vscode/
+
+# ===============================
+# Power BI Auto Backups (Optional)
+# ===============================
+*.pbix.autosave
